@@ -8,7 +8,7 @@ public class SqlData {
     public static final String CREATE_USER_TAB = """
             CREATE TABLE IF NOT EXISTS public.users (
             id BIGINT NOT NULL AUTO_INCREMENT,
-            last_name VARCHAR(45) NOT NULL,
+            first_name VARCHAR(45) NOT NULL,
             second_name VARCHAR(45) NOT NULL,
             age TINYINT NOT NULL,
             PRIMARY KEY (`id`))
@@ -16,7 +16,7 @@ public class SqlData {
 
     public static final String DROP_USERS_TAB = "DROP TABLE IF EXISTS users;";
     public static final String ADD_USER = """
-            INSERT INTO public.users (last_name, second_name, age)
+            INSERT INTO public.users (first_name, second_name, age)
             VALUES ('%s', '%s', %d);""";
     public static final String DELETE_USER = """
             DELETE

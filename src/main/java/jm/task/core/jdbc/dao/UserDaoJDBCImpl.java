@@ -1,8 +1,11 @@
 package jm.task.core.jdbc.dao;
 
 import jm.task.core.jdbc.model.User;
+import jm.task.core.jdbc.util.Util;
 
-import java.sql.*;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -30,7 +33,7 @@ public class UserDaoJDBCImpl implements UserDao {
     public List<User> getAllUsers() {
         List<User> userList = new ArrayList<>();
 
-        try (Statement statement = ConnectionData.getConnection().createStatement()) {
+        try (Statement statement = Util.getConnectionJDBC().createStatement()) {
             ResultSet resultSet = statement.executeQuery(SqlData.SELECT_FROM_PUBLIC_USERS);
 
             while (resultSet.next()) {
@@ -52,7 +55,7 @@ public class UserDaoJDBCImpl implements UserDao {
     }
 
     private void executeUpdate(String sql) {
-        try (Statement statement = ConnectionData.getConnection().createStatement()) {
+        try (Statement statement = Util.getConnectionJDBC().createStatement()) {
             statement.executeUpdate(sql);
         } catch (SQLException e) {
             throw new RuntimeException(e);

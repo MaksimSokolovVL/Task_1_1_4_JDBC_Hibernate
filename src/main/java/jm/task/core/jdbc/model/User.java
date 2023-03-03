@@ -6,9 +6,6 @@ import lombok.Setter;
 import lombok.ToString;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
 
 @Setter
 @Getter
@@ -24,7 +21,7 @@ public class User {
     @Column(name = "first_name", length = 45, nullable = false)
     private String name;
 
-    @Column(name = "last_name", length = 45, nullable = false)
+    @Column(name = "second_name", length = 45, nullable = false)
     private String lastName;
 
     @Column(name = "age", nullable = false)
