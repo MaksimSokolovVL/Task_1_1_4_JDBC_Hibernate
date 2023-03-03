@@ -3,7 +3,6 @@ package jm.task.core.jdbc.model;
 import javax.persistence.Column;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import java.util.Comparator;
 
 @Table
 public class User {
