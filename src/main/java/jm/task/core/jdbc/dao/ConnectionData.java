@@ -11,6 +11,9 @@ public class ConnectionData {
     public static final String DB_PASSWORD = "x0HuDgA5L2df";
 
     public static Connection getConnection() throws SQLException {
-        return DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
+        return DriverManager.getConnection(
+                DB_URL,
+                DB_USER,
+                DB_PASSWORD);
     }
 }
