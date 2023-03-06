@@ -35,7 +35,6 @@ public class UserDaoHibernateImpl implements UserDao {
 
     @Override
     public void saveUser(String name, String lastName, byte age) {
-//        executeTransaction(String.format(SqlData.ADD_USER, name, lastName, age)); //todo создал 2 варианта, т.к. не знаю каким лучше для ДЗ
 
         try (Session session = sessionFactory.openSession()) {
             transaction = session.beginTransaction();
@@ -51,7 +50,6 @@ public class UserDaoHibernateImpl implements UserDao {
 
     @Override
     public void removeUserById(long id) {
-//        executeTransaction(String.format(SqlData.DELETE_USER, id)); //todo создал 2 варианта, т.к. не знаю каким лучше для ДЗ
 
         try (Session session = sessionFactory.openSession()) {
             transaction = session.beginTransaction();

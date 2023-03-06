@@ -31,8 +31,6 @@ public class Util {
             configuration.setProperty("hibernate.connection.username", DB_USER);
             configuration.setProperty("hibernate.connection.password", DB_PASSWORD);
             configuration.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQL8Dialect");
-//            configuration.setProperty("hibernate.show_sql", "true"); //todo если нужна проверка запросов от Hibernate
-//            configuration.setProperty("hibernate.format_sql", "true");
 
             ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder()
                     .applySettings(configuration.getProperties())
