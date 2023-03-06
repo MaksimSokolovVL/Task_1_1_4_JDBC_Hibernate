@@ -37,12 +37,13 @@ public class UserDaoJDBCImpl implements UserDao {
             ResultSet resultSet = statement.executeQuery(SqlData.SELECT_FROM_PUBLIC_USERS);
 
             while (resultSet.next()) {
-                userList.add(new User(
-                                resultSet.getString("last_name"),
-                                resultSet.getString("second_name"),
-                                resultSet.getByte("age")
-                        )
+                User user = new User(
+                        resultSet.getString("last_name"),
+                        resultSet.getString("second_name"),
+                        resultSet.getByte("age")
                 );
+                user.setId(resultSet.getLong("id"));
+                userList.add(user);
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
