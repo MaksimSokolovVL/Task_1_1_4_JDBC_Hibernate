@@ -13,7 +13,7 @@ import java.sql.SQLException;
 public class Util {
     private static final String DB_URL = "jdbc:mysql://80.78.246.73:3306/public";
     private static final String DB_USER = "root";
-    private static final String DB_PASSWORD = "x0HuDgA5L2df";
+    private static final String DB_PASSWORD = "pass";
 
     public static Connection getConnectionJDBC() throws SQLException {
         return DriverManager.getConnection(
